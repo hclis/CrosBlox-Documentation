@@ -1,0 +1,25 @@
+/* This file defines custom CSS variables to override Starlight's default colors.
+We are overriding the primary hue (which controls the main accent color) 
+to be a neutral gray instead of the default blue.
+*/
+
+/* Use the :root selector to set global variables. 
+Starlight uses HSL colors, typically based on a hue (first number).
+*/
+:root {
+    /* For Light Mode */
+    /* Change the primary hue from blue (approx 200) to a neutral/cool gray (220 hue, 5% saturation) */
+    --sl-color-accent: hsl(220 5% 50%); /* Primary accent color for light mode */
+    --sl-color-accent-high: hsl(220 5% 30%); /* Darker accent for hover/active states */
+    --sl-color-text-accent: hsl(220 5% 20%); /* Accent text color */
+}
+
+/* Use the [data-theme="dark"] selector to set variables for Dark Mode
+*/
+[data-theme="dark"] {
+    /* For Dark Mode */
+    /* Use a light gray for visibility against the dark background */
+    --sl-color-accent: hsl(220 5% 70%); /* Primary accent color for dark mode */
+    --sl-color-accent-high: hsl(220 5% 90%); /* Lighter accent for hover/active states */
+    --sl-color-text-accent: hsl(220 5% 85%); /* Accent text color */
+}
