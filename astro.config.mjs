@@ -1,13 +1,15 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+const REPO_NAME = 'CrosBlox-Documentation';
 
 // https://astro.build/config
 export default defineConfig({
+base: `/${REPO_NAME}/`,
     integrations: [
         starlight({
             title: 'CrosBlox Docs',
-            social: [{ icon: 'gitlab', label: 'GitLab', href: 'https://github.com/hcldev/' }],
+            social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/hclis/' }],
             
             // FIX: Using the correct 'customCss' array to inject styles
             customCss: [
@@ -27,7 +29,7 @@ export default defineConfig({
                 },
                 {
                     label: 'Prerequisites',
-                    autogenerate: { directory: 'getting-ready' },
+                    autogenerate: { directory: 'pre' },
                 },
             ],
         }),
